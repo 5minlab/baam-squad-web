@@ -1,4 +1,4 @@
-# Baam Squad web
+# BAAM SQUAD web
 
 ## develop
 

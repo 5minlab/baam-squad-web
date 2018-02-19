@@ -9,7 +9,8 @@
   },
   "scripts": {
     "watch-css": "node-sass --watch --recursive --output docs/style.css --source-map true --source-map-contents docs/sass/style.scss",
-    "build-css": "node-sass docs/sass/style.scss > docs/style.css"
+    "build-css": "node-sass docs/sass/style.scss > docs/style.css",
+    "build": "npm run build-css"
   },
   "author": "",
   "license": "ISC"

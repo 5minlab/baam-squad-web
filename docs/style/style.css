@@ -3,7 +3,7 @@ body {
   margin: 0 auto;
   padding: 0;
   max-width: 768px;
-  background: #666; }
+  background: transparent; }
 
 img {
   color: transparent;
@@ -124,3 +124,5 @@ p {
 
 .footer-tail small {
   font-size: 70%; }
+
+/*# sourceMappingURL=style.css.map */

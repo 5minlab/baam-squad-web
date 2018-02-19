@@ -8,7 +8,7 @@ body {
   margin: 0 auto;
   padding: 0;
   max-width: 768px;
-  background:#666;
+  background: transparent;
 }
 
 img {
@@ -59,6 +59,26 @@ p {
     height: auto;
     width: 100%;
     max-width: 480px;
+  }
+}
+
+// background video
+.video-hero {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  .video-background {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
   }
 }
 

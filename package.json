@@ -5,12 +5,18 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.7.2"
+    "http-server": "^0.11.1",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2"
   },
   "scripts": {
-    "watch-css": "node-sass --watch --recursive --output docs/style.css --source-map true --source-map-contents docs/sass/style.scss",
+    "serve-http": "http-server docs -o",
+    "serve-https": "http-server docs -S -C key/cert.pem -K key/key.pem -o",
+    "watch-css": "node-sass --watch --recursive --output docs --source-map true --source-map-contents docs/sass/style.scss",
     "build-css": "node-sass docs/sass/style.scss > docs/style.css",
-    "build": "npm run build-css"
+    "build": "npm run build-css",
+    "start-http": "npm-run-all -p watch-css serve-http",
+    "start-https": "npm-run-all -p watch-css serve-https"
   },
   "author": "",
   "license": "ISC"

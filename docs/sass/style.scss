@@ -5,6 +5,10 @@
 
 // reset
 body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 768px;
+  background:#666;
 }
 
 img {
@@ -59,7 +63,7 @@ p {
 }
 
 
-// trailer
+// play trailer
 .play-trailer-wrapper {
   text-align: center;
   padding: 35px 0 35px 0;
@@ -71,8 +75,7 @@ p {
   width: 110px;
 }
 
-
-
+// trailer video
 .trailer-video {
   top: 0;
   left: 0;
@@ -109,8 +112,23 @@ p {
 }
 
 
-// footer
+// store
+.list-store {
+  text-align: center;
+  img {
+    width: 200px;
+    height: auto;
+  }
+  a {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+  }
+  a:hover {
+    border-bottom: 1px solid #fdc444;
+  }
+}
 
+// footer
 .footer-head {
   text-align: center;
   padding: 120px 0;

@@ -8,7 +8,8 @@
     "node-sass": "^4.7.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch-css": "node-sass --watch --recursive --output docs/style.css --source-map true --source-map-contents docs/sass/style.scss",
+    "build-css": "node-sass docs/sass/style.scss > docs/style.css"
   },
   "author": "",
   "license": "ISC"

@@ -3,7 +3,7 @@ body {
   margin: 0 auto;
   padding: 0;
   max-width: 768px;
-  background: #666; }
+  background: transparent; }
 
 img {
   color: transparent;
@@ -46,16 +46,31 @@ p {
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  position: relative; }
+  position: absolute;
+  left: 0;
+  right: 0; }
+  .video-hero .grid-container {
+    height: 600px; }
   .video-hero .video-background {
+    background-image: url(http://arizona-sunshine.com/wp-content/uploads/2017/11/az-hero-bg-1.jpg);
     position: absolute;
     right: 0;
     bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     z-index: -1; }
+  .video-hero .embed-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 56.25%; }
+  .video-hero iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 .play-trailer-wrapper {
   text-align: center;
@@ -124,3 +139,5 @@ p {
 
 .footer-tail small {
   font-size: 70%; }
+
+/*# sourceMappingURL=style.css.map */

@@ -58,3 +58,46 @@ window.onload = function () {
     }
   });
 };
+
+
+// background video
+//YouTube events
+var tag = document.createElement('script');
+tag.id = 'iframe-demo';
+tag.src = 'https://www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+var bg_video;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('video-embed', {});
+  bg_video = new YT.Player('bg-video-embed', {
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      autoplay: 1,
+      loop: 1,
+      playlist: 'rIYPUo8NAtE',
+      controls: 0,
+      autohide: 1,
+      modestbranding: 1,
+      vq: 'hd720'
+    },
+    videoId: 'rIYPUo8NAtE',
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+// 3. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+  bg_video.mute();
+  $('#bg-video').addClass('show');
+}
+
+var done = false;
+function onPlayerStateChange(event) {
+
+}

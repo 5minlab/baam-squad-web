@@ -49,7 +49,7 @@ p {
 // header
 .header-title {
   .game-logo {
-    padding: 100px 0 40px 0;
+    padding: 20px 0 20px 0;
   }
 
   .game-logo img {
@@ -59,7 +59,7 @@ p {
 
     height: auto;
     width: 100%;
-    max-width: 480px;
+    max-width: 250px;
   }
 }
 
@@ -75,11 +75,13 @@ p {
   z-index: -1;
 
   .grid-container {
-    height: 600px;
+    height: 460px;
   }
 
   .video-background {
-    background-image: url(http://arizona-sunshine.com/wp-content/uploads/2017/11/az-hero-bg-1.jpg);
+    background-image: url(/img/index/video-thumbnail.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
 
     position: absolute;
     right: 0;
@@ -96,6 +98,11 @@ p {
     height: auto;
     padding-bottom: 56.25%;
   }
+  @media only screen and (max-width: 768px) {
+    .embed-container {
+      display: none;
+    }
+  }
 
   iframe {
     position: absolute;
@@ -110,7 +117,7 @@ p {
 // play trailer
 .play-trailer-wrapper {
   text-align: center;
-  padding: 35px 0 35px 0;
+  padding: 0 0 35px 0;
 }
 .play-trailer {
   display: inline-block;

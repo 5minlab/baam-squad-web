@@ -74,7 +74,7 @@ p {
     margin-left: auto;
     margin-right: auto;
 
-    height: 180px;
+    height: 240px;
     max-height: 100%;
     width: auto;
   }
@@ -127,16 +127,22 @@ p {
   }
 }
 
+@media screen and (min-width: 35.5em) {
+  .video-hero {
+    height: $video-hero-height - $video-hero-overlap;
+  }
+}
+
 // play trailer
 .play-trailer-wrapper {
   text-align: center;
-  padding: 0 0 2em 0;
+  padding: 2em 0 2em 0;
 }
 .play-trailer {
   display: inline-block;
 }
 .play-trailer img {
-  width: 90px;
+  width: 130px;
 }
 
 // trailer video
@@ -202,11 +208,12 @@ p {
     max-width: 400px;
     min-width: 280px;
     width: 70%;
+    font-size: 1.4em;
 
     margin: 0 auto;
     text-align: center;
     color: #fff;
-    padding-bottom: 5px;
+    padding: 25px 0 0 0;
     border-bottom: 3px solid rgba(255, 255, 255, 0.5);
   }
 }
@@ -215,7 +222,7 @@ p {
   padding: 10px;
 
   img {
-    height: 50px;
+    height: 65px;
     width: auto;
   }
   img.not-supported {
@@ -245,6 +252,9 @@ p {
   display: flex;
   align-items: center;
 
+  .description {
+    font-size: 1.1em;
+  }
   @media screen and (min-width: 35.5em) {
     .description {
       padding: 1.5em;

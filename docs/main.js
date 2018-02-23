@@ -34,7 +34,7 @@ function updateVideoContainerSize() {
 
   var e = $('.embed-container');
   // video-hero-height
-  var origElementHeight = 460;
+  var origElementHeight = 630;
   var gap = (nextVideoHeight - origElementHeight) * 0.5;
   e.css('height', nextVideoHeight);
   e.css('top', -gap+'px');

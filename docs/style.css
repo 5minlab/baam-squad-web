@@ -217,9 +217,10 @@ p {
   padding: 1em 0; }
 
 .content-features li::before {
-  content: "◼";
+  content: "\25A0";
   color: #D50800;
-  position: absolute; }
+  position: absolute;
+  font-size: 1em; }
 
 .content-features li p {
   display: inline-block;

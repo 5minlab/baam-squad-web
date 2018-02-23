@@ -290,9 +290,10 @@ p {
 
   // https://www.w3.org/Style/Examples/007/color-bullets.en.html
   li::before {
-    content: "◼";
+    content: "\25A0";
     color: #D50800;
     position: absolute;
+    font-size: 1em;
   }
   li p {
     display: inline-block;

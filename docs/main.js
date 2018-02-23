@@ -21,8 +21,34 @@
   }
 }());
 
+function updateVideoContainerSize() {
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+
+  // 유튜브에 업로드된 동영상 크기. 하드코딩하기
+  var origVideoWidth = 1280;
+  var origVideoHeight = 720;
+
+  var nextVideoWidth = w;
+  var nextVideoHeight = origVideoHeight * nextVideoWidth / origVideoWidth;
+
+  var e = $('.embed-container');
+  // video-hero-height
+  var origElementHeight = 460;
+  var gap = (nextVideoHeight - origElementHeight) * 0.5;
+  e.css('height', nextVideoHeight);
+  e.css('top', -gap+'px');
+  e.css('clip-path', 'inset(0 0 ' + gap + 'px 0)');
+}
+
+window.onresize = function(evt) {
+  updateVideoContainerSize();
+}
+
 // Place any jQuery/helper plugins in here.
 window.onload = function () {
+  updateVideoContainerSize();
+
   // http://stackoverflow.com/questions/15164942/stop-embedded-youtube-iframe
   var trailer = $('.trailer-video');
   trailer.click(function () {
@@ -71,6 +97,11 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 var bg_video;
 function onYouTubeIframeAPIReady() {
+  // 실제 동영상
+  var videoId = 'FZIsM6d9m1Y';
+  // 테스트용 시계
+  //var videoId = 'NSuNpiW-LwI';
+
   // background video
   // 같은 동영상을 playlist, videoId에 넣으면 무한루프가 된다
   // 플레이 리스트 따로 안만들어도 되더라
@@ -81,13 +112,13 @@ function onYouTubeIframeAPIReady() {
     playerVars: {
       autoplay: 1,
       loop: 1,
-      playlist: 'FZIsM6d9m1Y',
+      playlist: videoId,
       controls: 0,
       autohide: 1,
       modestbranding: 1,
       vq: 'hd720'
     },
-    videoId: 'FZIsM6d9m1Y',
+    videoId: videoId,
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange

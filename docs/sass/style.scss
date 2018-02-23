@@ -66,7 +66,7 @@ p {
 // header
 .header-title {
   .game-logo {
-    padding: 20px 0 20px 0;
+    padding: 1em 0 1em 0;
   }
 
   .game-logo img {
@@ -141,7 +141,7 @@ p {
 // play trailer
 .play-trailer-wrapper {
   text-align: center;
-  padding: 0 0 35px 0;
+  padding: 0 0 2em 0;
 }
 .play-trailer {
   display: inline-block;
@@ -188,6 +188,10 @@ p {
 }
 
 // screenshot
+.popup-gallery {
+  padding: 2em 0;
+}
+
 .screenshot-box {
   padding: 5px;
   display: block;
@@ -275,13 +279,24 @@ p {
     text-align: center;
   }
 
-  // https://www.w3.org/Style/Examples/007/color-bullets.en.html
   ul {
     list-style: none;
+    margin: 0 auto;
   }
+
+  li {
+    padding: 1em 0;
+  }
+
+  // https://www.w3.org/Style/Examples/007/color-bullets.en.html
   li::before {
     content: "◼";
     color: #D50800;
+    position: absolute;
+  }
+  li p {
+    display: inline-block;
+    margin: 0 0 0 2em;
   }
 }
 

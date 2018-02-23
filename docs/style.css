@@ -2,18 +2,40 @@
 .upper-case {
   text-transform: uppercase; }
 
+.show-only-desktop {
+  display: none; }
+
+@media screen and (min-width: 35.5em) {
+  .show-only-desktop {
+    display: block; } }
+
+.show-only-mobile {
+  display: block; }
+
+@media screen and (min-width: 35.5em) {
+  .show-only-mobile {
+    display: none; } }
+
 body {
+  font-family: "BM DoHyeon", "Montserrat", Helvetica, sans-serif;
   margin: 0 auto;
   padding: 0;
-  max-width: 600px;
-  background: black;
-  color: #D2D2D2; }
-
-body {
-  font-family: "BM DoHyeon", "Montserrat", Helvetica, sans-serif; }
+  max-width: 750px;
+  color: #D2D2D2;
+  /* FF3.6-15 */
+  background: -moz-linear-gradient(top, #000 0%, #000 25%, #000 55%, #573b4e 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, #000 0%, #000 25%, #000 55%, #573b4e 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-image: linear-gradient(to bottom, #000 0%, #000 25%, #000 55%, #573b4e 100%);
+  background-repeat: no-repeat;
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF000000', endColorstr='#FF573B4E', GradientType=0);
+  background-color: #000; }
 
 div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, form, fieldset, p, button, input, textarea, select, a {
-  font-family: "BM DoHyeon", "Montserrat", Helvetica, sans-serif; }
+  font-family: "BM DoHyeon", "Montserrat", Helvetica, sans-serif;
+  line-height: 1.6em; }
 
 img {
   color: transparent;
@@ -42,7 +64,7 @@ p {
   word-break: normal; }
 
 .header-title .game-logo {
-  padding: 15px 0 15px 0; }
+  padding: 20px 0 20px 0; }
 
 .header-title .game-logo img {
   display: block;
@@ -52,10 +74,6 @@ p {
   max-height: 100%;
   width: auto; }
 
-@media only screen and (max-width: 568px) {
-  .header-title .game-logo img {
-    height: 150px; } }
-
 .video-hero {
   height: 460px; }
   .video-hero .video-background {
@@ -63,37 +81,21 @@ p {
     background-repeat: no-repeat;
     background-position: top center;
     position: absolute;
+    top: 0;
     right: 0;
-    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 460px;
     z-index: -2; }
-  .video-hero .bg-video-overlap {
-    position: absolute;
-    top: 460px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    /* FF3.6-15 */
-    background: -moz-linear-gradient(top, #000 0%, #000 25%, #000 55%, #583B4E 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-linear-gradient(top, #000 0%, #000 25%, #000 55%, #583B4E 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    background-image: linear-gradient(to bottom, #000 0%, #000 25%, #000 55%, #583B4E 100%);
-    background-repeat: no-repeat;
-    /* IE6-9 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF000000', endColorstr='#FF583B4E', GradientType=0);
-    color: #000; }
   .video-hero .embed-container {
     position: relative;
     overflow: hidden;
     max-width: 100%;
     height: auto;
-    padding-bottom: 56.25%; }
-  @media only screen and (max-width: 817.77778px) {
+    padding-bottom: 56.25%;
+    display: none; }
+  @media only screen and (min-width: 817.77778px) {
     .video-hero .embed-container {
-      display: none; } }
+      display: block; } }
   .video-hero iframe {
     position: absolute;
     top: 0;
@@ -101,9 +103,15 @@ p {
     width: 100%;
     height: 100%; }
 
-@media only screen and (max-width: 568px) {
-  .video-hero {
-    height: 500px; } }
+.background-gradient {
+  position: absolute;
+  top: 460px;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  height: 200px;
+  background-color: #000;
+  border-top: 1px solid #000; }
 
 .play-trailer-wrapper {
   text-align: center;
@@ -114,12 +122,6 @@ p {
 
 .play-trailer img {
   width: 90px; }
-
-@media only screen and (max-width: 568px) {
-  .play-trailer-wrapper {
-    padding-top: 30px; }
-  .play-trailer img {
-    width: 80px; } }
 
 .trailer-video {
   top: 0;
@@ -135,16 +137,15 @@ p {
 
 .trailer-video .video-wrapper {
   position: relative;
-  top: 5%;
+  top: 25%;
+  height: 50%;
   width: 90%;
-  height: 90%;
   margin: auto; }
 
-@media only screen and (max-width: 568px) {
+@media screen and (min-width: 35.5em) {
   .trailer-video .video-wrapper {
-    top: 25%;
-    height: 50%;
-    width: 90%; } }
+    top: 5%;
+    height: 90%; } }
 
 .trailer-video .video-wrapper iframe {
   width: 100%;
@@ -161,6 +162,7 @@ p {
 
 .content-store p {
   max-width: 400px;
+  min-width: 280px;
   width: 70%;
   margin: 0 auto;
   text-align: center;
@@ -172,7 +174,7 @@ p {
   text-align: center;
   padding: 10px; }
   .list-store img {
-    height: 60px;
+    height: 50px;
     width: auto; }
   .list-store img.not-supported {
     opacity: 0.3; }
@@ -182,11 +184,23 @@ p {
   .list-store a:hover {
     border-bottom: 1px solid #fdc444; }
 
-.content-intro p.headline {
-  color: #fff; }
+.content-text {
+  margin: 1em; }
 
-.content-intro p.detail {
-  color: #959595; }
+.content-images {
+  padding: 30px 10px; }
+
+.content-intro {
+  display: flex;
+  align-items: center; }
+  @media screen and (min-width: 35.5em) {
+    .content-intro .description {
+      padding: 1.5em; } }
+  .content-intro p.headline {
+    color: #fff;
+    font-size: 110%; }
+  .content-intro p.detail {
+    color: #959595; }
 
 .content-features h2 {
   color: #FF4E47;
@@ -201,20 +215,26 @@ p {
 
 .footer-head {
   text-align: center;
-  padding: 120px 0;
+  padding: 40px 0;
   font-size: 0.8em; }
 
 .footer-head li {
   font-size: 1em;
-  padding: 0.2em 0; }
+  padding: 0.5em 0;
+  color: #fff; }
 
 .footer-tail {
   text-align: center;
-  margin: auto;
   width: 100%;
   padding-bottom: 30px; }
 
 .footer-tail small {
-  font-size: 70%; }
+  font-size: 100%;
+  color: #8E8089; }
+
+.footer-tail img {
+  margin: 0 auto;
+  max-width: 200px;
+  width: 50%; }
 
 /*# sourceMappingURL=style.css.map */

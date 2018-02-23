@@ -4,20 +4,28 @@
 @import "mixins";
 @import "utilities";
 
+// mobile-first
+
 // reset
 body {
+  font-family: $default-font-family;
+
   margin: 0 auto;
   padding: 0;
-  max-width: 600px;
-  background: black;
+  max-width: 750px;
   color: #D2D2D2;
-}
 
-body {
-  font-family: $default-font-family;
+  @include gradient-y(
+      $gradient-color-1, 0%,
+      $gradient-color-2, $gradient-color-2-stop,
+      $gradient-color-3, $gradient-color-3-stop,
+      $gradient-color-4, 100%
+  );
+  background-color: #000;
 }
 div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,fieldset,p,button,input,textarea,select,a {
   font-family: $default-font-family;
+  line-height: 1.6em;
 }
 
 
@@ -58,7 +66,7 @@ p {
 // header
 .header-title {
   .game-logo {
-    padding: 15px 0 15px 0;
+    padding: 20px 0 20px 0;
   }
 
   .game-logo img {
@@ -70,16 +78,11 @@ p {
     max-height: 100%;
     width: auto;
   }
-  @media only screen and (max-width: 568px) {
-    .game-logo img {
-      height: 150px;
-    }
-  }
 }
 
 // background video
 .video-hero {
-  height: $video-hero-height-desktop;
+  height: $video-hero-height;
 
   .video-background {
     background-image: url(/img/index/video-thumbnail.jpg);
@@ -87,31 +90,11 @@ p {
     background-position: top center;
 
     position: absolute;
+    top: 0;
     right: 0;
-    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: $video-hero-height;
     z-index: -2;
-  }
-
-  // 동영상이 커져서 텍스트 영역을 가리지 못하도록하려고
-  // 동영상 - overlap - 텍스트
-  // 순서로 렌더링한다
-  .bg-video-overlap {
-    position: absolute;
-    top: $video-hero-height-desktop;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-
-    @include gradient-y(
-        $gradient-color-1, 0%,
-        $gradient-color-2, $gradient-color-2-stop,
-        $gradient-color-3, $gradient-color-3-stop,
-        $gradient-color-4, 100%
-    );
-    color: #000;
   }
 
   .embed-container {
@@ -120,10 +103,14 @@ p {
     max-width: 100%;
     height: auto;
     padding-bottom: 56.25%;
+
+    // mobile에서는 배경 동영상 없다
+    display: none;
   }
-  @media only screen and (max-width: (1280px * $video-hero-height-desktop / 720px) ){
+
+  @media only screen and (min-width: (1280px * $video-hero-height / 720px) ){
     .embed-container {
-      display: none;
+      display: block;
     }
   }
 
@@ -135,12 +122,21 @@ p {
     height: 100%;
   }
 }
-@media only screen and (max-width: 568px) {
-  .video-hero {
-    height: $video-hero-height-mobile;
-  }
-}
 
+
+// 동영상이 커져서 텍스트 영역을 가리지 못하도록하려고
+// 동영상 - overlap - 텍스트
+// 순서로 렌더링한다
+.background-gradient {
+  position: absolute;
+  top: $video-hero-height;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  height: 200px;
+  background-color: #000;
+  border-top: 1px solid #000;
+}
 
 // play trailer
 .play-trailer-wrapper {
@@ -152,14 +148,6 @@ p {
 }
 .play-trailer img {
   width: 90px;
-}
-@media only screen and (max-width: 568px) {
-  .play-trailer-wrapper {
-    padding-top: 30px;
-  }
-  .play-trailer img {
-    width: 80px;
-  }
 }
 
 // trailer video
@@ -180,19 +168,20 @@ p {
 }
 .trailer-video .video-wrapper {
   position: relative;
-  top: 5%;
 
+  top: 25%;
+  height: 50%;
   width: 90%;
-  height: 90%;
+
   margin: auto;
 }
-@media only screen and (max-width: 568px) {
+@media screen and (min-width: 35.5em) {
   .trailer-video .video-wrapper {
-    top: 25%;
-    height: 50%;
-    width: 90%;
+    top: 5%;
+    height: 90%;
   }
 }
+
 .trailer-video .video-wrapper iframe {
   width: 100%;
   height: 100%;
@@ -218,7 +207,9 @@ p {
 .content-store {
   p {
     max-width: 400px;
+    min-width: 280px;
     width: 70%;
+
     margin: 0 auto;
     text-align: center;
     color: #fff;
@@ -231,7 +222,7 @@ p {
   padding: 10px;
 
   img {
-    height: 60px;
+    height: 50px;
     width: auto;
   }
   img.not-supported {
@@ -247,10 +238,29 @@ p {
   }
 }
 
+.content-text {
+  margin: 1em;
+}
+
+.content-images {
+  padding: 30px 10px;
+}
+
 // intro
 .content-intro {
+  // https://jsfiddle.net/mjgjj85v/2/
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width: 35.5em) {
+    .description {
+      padding: 1.5em;
+    }
+  }
+
   p.headline {
     color: #fff;
+    font-size: 110%;
   }
   p.detail {
     color: #959595;
@@ -279,21 +289,27 @@ p {
 // footer
 .footer-head {
   text-align: center;
-  padding: 120px 0;
+  padding: 40px 0;
   font-size: 0.8em;
 }
 .footer-head li {
   font-size: 1em;
-  padding: 0.2em 0;
+  padding: 0.5em 0;
+  color: #fff;
 }
 
 
 .footer-tail {
   text-align: center;
-  margin: auto;
   width: 100%;
   padding-bottom: 30px;
 }
 .footer-tail small {
-  font-size: 70%;
+  font-size: 100%;
+  color: #8E8089;
+}
+.footer-tail img {
+  margin: 0 auto;
+  max-width: 200px;
+  width: 50%;
 }

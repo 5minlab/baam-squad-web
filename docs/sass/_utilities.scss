@@ -3,3 +3,21 @@
 .upper-case {
   text-transform: uppercase;
 }
+
+.show-only-desktop {
+  display: none;
+}
+@media screen and (min-width: 35.5em) {
+  .show-only-desktop {
+    display: block;
+  }
+}
+
+.show-only-mobile {
+  display: block;
+}
+@media screen and (min-width: 35.5em) {
+  .show-only-mobile {
+    display: none;
+  }
+}

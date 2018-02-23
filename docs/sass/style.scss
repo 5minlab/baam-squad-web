@@ -8,7 +8,8 @@ body {
   margin: 0 auto;
   padding: 0;
   max-width: 960px;
-  background: transparent;
+  background: black;
+  color: #D2D2D2;
 }
 
 img {
@@ -185,6 +186,35 @@ p {
     border-bottom: 1px solid #fdc444;
   }
 }
+
+// intro
+.content-intro {
+  p.headline {
+    color: #fff;
+  }
+  p.detail {
+    color: #959595;
+  }
+}
+
+
+// features
+.content-features {
+  h2 {
+    color: #FF4E47;
+    text-align: center;
+  }
+
+  // https://www.w3.org/Style/Examples/007/color-bullets.en.html
+  ul {
+    list-style: none;
+  }
+  li::before {
+    content: "◼";
+    color: #D50800;
+  }
+}
+
 
 // footer
 .footer-head {

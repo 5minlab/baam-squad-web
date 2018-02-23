@@ -1,9 +1,13 @@
 @charset "UTF-8";
+.upper-case {
+  text-transform: uppercase; }
+
 body {
   margin: 0 auto;
   padding: 0;
   max-width: 960px;
-  background: transparent; }
+  background: black;
+  color: #D2D2D2; }
 
 img {
   color: transparent;
@@ -131,6 +135,23 @@ p {
     border-bottom: 1px solid transparent; }
   .list-store a:hover {
     border-bottom: 1px solid #fdc444; }
+
+.content-intro p.headline {
+  color: #fff; }
+
+.content-intro p.detail {
+  color: #959595; }
+
+.content-features h2 {
+  color: #FF4E47;
+  text-align: center; }
+
+.content-features ul {
+  list-style: none; }
+
+.content-features li::before {
+  content: "◼";
+  color: #D50800; }
 
 .footer-head {
   text-align: center;

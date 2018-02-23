@@ -71,6 +71,9 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 var bg_video;
 function onYouTubeIframeAPIReady() {
+  // background video
+  // 같은 동영상을 playlist, videoId에 넣으면 무한루프가 된다
+  // 플레이 리스트 따로 안만들어도 되더라
   player = new YT.Player('video-embed', {});
   bg_video = new YT.Player('bg-video-embed', {
     height: '100%',
@@ -78,13 +81,13 @@ function onYouTubeIframeAPIReady() {
     playerVars: {
       autoplay: 1,
       loop: 1,
-      playlist: 'rIYPUo8NAtE',
+      playlist: 'FZIsM6d9m1Y',
       controls: 0,
       autohide: 1,
       modestbranding: 1,
       vq: 'hd720'
     },
-    videoId: 'rIYPUo8NAtE',
+    videoId: 'FZIsM6d9m1Y',
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange

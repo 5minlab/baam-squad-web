@@ -1,0 +1,15 @@
+n = 0;
+while(n < 6) {
+	src_filename = n ++ ".png";
+	resize_filename = "screenshot-" ++ n ++ ".jpg";
+	thumbnail_filename = "thumbnail-" ++ n ++ ".jpg";
+	
+	// type convert
+	// magick convert 0.png screenshot-0.jpg
+	// make thumbnail
+	// magick convert 0.png -resize "25%" thumbnail-0.jpg	
+	call("magick", "convert", src_filename, resize_filename);
+	call("magick", "convert", src_filename, "-resize", "480x270", thumbnail_filename);
+	
+	n = n + 1;
+}

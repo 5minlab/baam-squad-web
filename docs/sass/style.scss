@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import "variables";
+@import "mixins";
 @import "utilities";
 
 // reset
@@ -13,10 +14,10 @@ body {
 }
 
 body {
-  font-family: 'BM DoHyeon', 'Montserrat', Helvetica, sans-serif;
+  font-family: $default-font-family;
 }
 div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,fieldset,p,button,input,textarea,select,a {
-  font-family: 'BM DoHyeon', 'Montserrat', Helvetica, sans-serif;
+  font-family: $default-font-family;
 }
 
 
@@ -57,7 +58,7 @@ p {
 // header
 .header-title {
   .game-logo {
-    padding: 20px 0 20px 0;
+    padding: 15px 0 15px 0;
   }
 
   .game-logo img {
@@ -65,38 +66,52 @@ p {
     margin-left: auto;
     margin-right: auto;
 
-    height: auto;
-    width: 100%;
-    max-width: 250px;
+    height: 180px;
+    max-height: 100%;
+    width: auto;
+  }
+  @media only screen and (max-width: 568px) {
+    .game-logo img {
+      height: 150px;
+    }
   }
 }
 
 // background video
 .video-hero {
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-
-  .grid-container {
-    height: 460px;
-  }
+  height: $video-hero-height-desktop;
 
   .video-background {
     background-image: url(/img/index/video-thumbnail.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
 
     position: absolute;
     right: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
+    z-index: -2;
+  }
+
+  // 동영상이 커져서 텍스트 영역을 가리지 못하도록하려고
+  // 동영상 - overlap - 텍스트
+  // 순서로 렌더링한다
+  .bg-video-overlap {
+    position: absolute;
+    top: $video-hero-height-desktop;
+    right: 0;
+    left: 0;
+    bottom: 0;
     z-index: -1;
+
+    @include gradient-y(
+        $gradient-color-1, 0%,
+        $gradient-color-2, $gradient-color-2-stop,
+        $gradient-color-3, $gradient-color-3-stop,
+        $gradient-color-4, 100%
+    );
+    color: #000;
   }
 
   .embed-container {
@@ -106,7 +121,7 @@ p {
     height: auto;
     padding-bottom: 56.25%;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: (1280px * $video-hero-height-desktop / 720px) ){
     .embed-container {
       display: none;
     }
@@ -120,6 +135,11 @@ p {
     height: 100%;
   }
 }
+@media only screen and (max-width: 568px) {
+  .video-hero {
+    height: $video-hero-height-mobile;
+  }
+}
 
 
 // play trailer
@@ -131,7 +151,15 @@ p {
   display: inline-block;
 }
 .play-trailer img {
-  width: 110px;
+  width: 90px;
+}
+@media only screen and (max-width: 568px) {
+  .play-trailer-wrapper {
+    padding-top: 30px;
+  }
+  .play-trailer img {
+    width: 80px;
+  }
 }
 
 // trailer video
@@ -160,9 +188,9 @@ p {
 }
 @media only screen and (max-width: 568px) {
   .trailer-video .video-wrapper {
-      top: 25%;
-      height: 50%;
-      width: 90%;
+    top: 25%;
+    height: 50%;
+    width: 90%;
   }
 }
 .trailer-video .video-wrapper iframe {
@@ -187,12 +215,29 @@ p {
 
 
 // store
+.content-store {
+  p {
+    max-width: 400px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 5px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  }
+}
 .list-store {
   text-align: center;
+  padding: 10px;
+
   img {
-    width: 200px;
-    height: auto;
+    height: 60px;
+    width: auto;
   }
+  img.not-supported {
+    opacity: 0.3;
+  }
+
   a {
     display: inline-block;
     border-bottom: 1px solid transparent;

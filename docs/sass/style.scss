@@ -196,7 +196,7 @@ p {
 }
 
 .screenshot-box {
-  padding: 5px;
+  padding: 10px;
   display: block;
 
   img {
@@ -204,8 +204,13 @@ p {
     margin: 0 auto;
 
     box-sizing: border-box;
-    border: 3px solid #505050;
-    border-radius: 5px;
+    //border: 3px solid #505050;
+    //border-radius: 5px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .screenshot-box {
+    padding: 5px;
   }
 }
 
@@ -268,6 +273,7 @@ p {
   // https://jsfiddle.net/mjgjj85v/2/
   display: flex;
   align-items: center;
+  margin: 2em 1em;
 
   .description {
     font-size: 1.1em;
@@ -321,12 +327,12 @@ p {
 // footer
 .footer-head {
   text-align: center;
-  padding: 40px 0;
+  padding: 60px 0;
   font-size: 0.8em;
 }
 .footer-head li {
-  font-size: 1em;
-  padding: 0.5em 0;
+  font-size: 1.2em;
+  padding: 0.3em 0;
   color: #fff;
 }
 
@@ -337,11 +343,11 @@ p {
   padding-bottom: 30px;
 }
 .footer-tail small {
-  font-size: 100%;
+  font-size: 90%;
   color: #8E8089;
 }
 .footer-tail img {
   margin: 0 auto;
-  max-width: 200px;
-  width: 50%;
+  max-width: 120px;
+  width: 30%;
 }

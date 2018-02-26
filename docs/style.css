@@ -97,7 +97,7 @@ p {
     clip-path: inset(0 0 0 0);
     top: 0;
     height: 100%; }
-  @media screen and (min-width: 35.5em) {
+  @media screen and (min-width: 48.1em) {
     .video-hero .embed-container {
       display: block; } }
   .video-hero iframe {

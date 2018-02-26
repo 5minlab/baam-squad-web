@@ -117,7 +117,10 @@ p {
     height: 100%;
   }
 
-  @media screen and (min-width: 35.5em) {
+  // 48em이 ≥ 768px
+  // ipad 해상도 이상부터 동영상으로 띄우고싶다
+  // 외부 시연시 데이터를 너무 잡아먹지 않도록 하고싶어서
+  @media screen and (min-width: 48.1em) {
     .embed-container {
       display: block;
     }

@@ -9,10 +9,6 @@
 // reset
 body {
   font-family: $default-font-family;
-
-  margin: 0 auto;
-  padding: 0;
-  max-width: 750px;
   color: #D2D2D2;
 
   @include gradient-y(
@@ -60,6 +56,12 @@ a:hover {
 
 p {
     word-break: normal;
+}
+
+.site-content {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 
@@ -230,8 +232,10 @@ p {
   .store-icon-wrapper.supported:hover {
     border-bottom: $store-icon-underline-size solid #fdc444;
   }
-  .not-supported {
-    opacity: 0.3;
+  .store-icon-wrapper.not-supported {
+    img {
+      opacity: 0.3;
+    }
   }
 
   img {

@@ -1,16 +1,14 @@
 @mixin gradient-y(
     $color_1, $color_1_stop,
     $color_2, $color_2_stop,
-    $color_3, $color_3_stop,
-    $color_4, $color_4_stop
+    $color_3, $color_3_stop
 ) {
     /* FF3.6-15 */
     background: -moz-linear-gradient(
         top,
         $color_1 $color_1_stop,
         $color_2 $color_2_stop,
-        $color_3 $color_3_stop,
-        $color_4 $color_4_stop
+        $color_3 $color_3_stop
     );
 
     /* Chrome10-25,Safari5.1-6 */
@@ -18,8 +16,7 @@
         top,
         $color_1 $color_1_stop,
         $color_2 $color_2_stop,
-        $color_3 $color_3_stop,
-        $color_4 $color_4_stop
+        $color_3 $color_3_stop
     );
 
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -27,13 +24,12 @@
         to bottom,
         $color_1 $color_1_stop,
         $color_2 $color_2_stop,
-        $color_3 $color_3_stop,
-        $color_4 $color_4_stop
+        $color_3 $color_3_stop
     );
 
     background-repeat: no-repeat;
 
     /* IE6-9 */
     // IE9 gets no color-stop at all for proper fallback
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($color_1)}', endColorstr='#{ie-hex-str($color_4)}', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($color_1)}', endColorstr='#{ie-hex-str($color_3)}', GradientType=0);
 }

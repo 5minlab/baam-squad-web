@@ -23,11 +23,11 @@ body {
   max-width: 750px;
   color: #D2D2D2;
   /* FF3.6-15 */
-  background: -moz-linear-gradient(top, #000 0%, #000 25%, #000 55%, #573b4e 100%);
+  background: -moz-linear-gradient(top, #000 0%, #000 80%, #573b4e 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-linear-gradient(top, #000 0%, #000 25%, #000 55%, #573b4e 100%);
+  background: -webkit-linear-gradient(top, #000 0%, #000 80%, #573b4e 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background-image: linear-gradient(to bottom, #000 0%, #000 25%, #000 55%, #573b4e 100%);
+  background-image: linear-gradient(to bottom, #000 0%, #000 80%, #573b4e 100%);
   background-repeat: no-repeat;
   /* IE6-9 */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF000000', endColorstr='#FF573B4E', GradientType=0);
@@ -35,7 +35,8 @@ body {
 
 div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, form, fieldset, p, button, input, textarea, select, a {
   font-family: "BM DoHyeon", "Montserrat", Helvetica, sans-serif;
-  line-height: 1.6em; }
+  line-height: 1.6em;
+  letter-spacing: 0.07em; }
 
 img {
   color: transparent;
@@ -106,7 +107,7 @@ p {
 
 @media screen and (min-width: 35.5em) {
   .video-hero {
-    height: 580px; } }
+    height: 605px; } }
 
 .play-trailer-wrapper {
   text-align: center;
@@ -172,16 +173,20 @@ p {
 .list-store {
   text-align: center;
   padding: 10px; }
-  .list-store img {
-    height: 65px;
-    width: auto; }
-  .list-store img.not-supported {
-    opacity: 0.3; }
-  .list-store a {
+  .list-store .store-icon-wrapper {
     display: inline-block;
-    border-bottom: 1px solid transparent; }
-  .list-store a:hover {
-    border-bottom: 1px solid #fdc444; }
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid transparent; }
+  .list-store .store-icon-wrapper.supported:hover {
+    border-bottom: 2px solid #fdc444; }
+  .list-store .not-supported {
+    opacity: 0.3; }
+  .list-store img {
+    height: 50px;
+    width: auto; }
+  @media screen and (min-width: 35.5em) {
+    .list-store img {
+      height: 65px; } }
 
 .content-text {
   margin: 1em; }
@@ -247,5 +252,3 @@ p {
   margin: 0 auto;
   max-width: 200px;
   width: 50%; }
-
-/*# sourceMappingURL=style.css.map */

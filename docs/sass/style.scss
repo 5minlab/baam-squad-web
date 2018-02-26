@@ -18,14 +18,14 @@ body {
   @include gradient-y(
       $gradient-color-1, 0%,
       $gradient-color-2, $gradient-color-2-stop,
-      $gradient-color-3, $gradient-color-3-stop,
-      $gradient-color-4, 100%
+      $gradient-color-3, 100%
   );
   background-color: #000;
 }
 div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,fieldset,p,button,input,textarea,select,a {
   font-family: $default-font-family;
   line-height: 1.6em;
+  letter-spacing: 0.07em;
 }
 
 
@@ -221,20 +221,27 @@ p {
   text-align: center;
   padding: 10px;
 
-  img {
-    height: 65px;
-    width: auto;
+  .store-icon-wrapper {
+    display: inline-block;
+    padding-bottom: 0.5em;
+
+    border-bottom: $store-icon-underline-size solid transparent;
   }
-  img.not-supported {
+  .store-icon-wrapper.supported:hover {
+    border-bottom: $store-icon-underline-size solid #fdc444;
+  }
+  .not-supported {
     opacity: 0.3;
   }
 
-  a {
-    display: inline-block;
-    border-bottom: 1px solid transparent;
+  img {
+    height: 50px;
+    width: auto;
   }
-  a:hover {
-    border-bottom: 1px solid #fdc444;
+  @media screen and (min-width: 35.5em) {
+    img {
+      height: 65px;
+    }
   }
 }
 

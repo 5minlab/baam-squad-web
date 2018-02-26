@@ -19,6 +19,7 @@
 body {
   font-family: "BM DoHyeon", "Montserrat", Helvetica, sans-serif;
   color: #D2D2D2;
+  overflow-x: hidden;
   /* FF3.6-15 */
   background: -moz-linear-gradient(top, #000 0%, #000 80%, #573b4e 100%);
   /* Chrome10-25,Safari5.1-6 */
@@ -93,11 +94,10 @@ p {
     display: none;
     position: relative;
     overflow: hidden;
-    max-width: 100%;
     clip-path: inset(0 0 0 0);
     top: 0;
     height: 100%; }
-  @media only screen and (min-width: 1120px) {
+  @media screen and (min-width: 35.5em) {
     .video-hero .embed-container {
       display: block; } }
   .video-hero iframe {

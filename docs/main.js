@@ -29,16 +29,40 @@ function updateVideoContainerSize() {
   var origVideoWidth = 1280;
   var origVideoHeight = 720;
 
-  var nextVideoWidth = w;
-  var nextVideoHeight = origVideoHeight * nextVideoWidth / origVideoWidth;
-
-  var e = $('.embed-container');
   // video-hero-height
+  // 동영상이 차지할 영역은 하드코딩. 좌표계는 px
   var origElementHeight = 630;
-  var gap = (nextVideoHeight - origElementHeight) * 0.5;
-  e.css('height', nextVideoHeight);
-  e.css('top', -gap+'px');
-  e.css('clip-path', 'inset(0 0 ' + gap + 'px 0)');
+  var origElementWidth = origVideoWidth * origElementHeight / origVideoHeight;
+
+  if(w >= origElementWidth) {
+    // 스크린 가로폭이 동영상 가로폭보다 큰 경우
+    // 동영상을 가로폭에 맞춰서 확대후 위아래를 자른다
+    var nextVideoWidth = w;
+    var nextVideoHeight = origVideoHeight * nextVideoWidth / origVideoWidth;
+
+    var e = $('.embed-container');
+    var gap = (nextVideoHeight - origElementHeight) * 0.5;
+    e.css('height', nextVideoHeight + 'px');
+    e.css('width', nextVideoWidth + 'px');
+    e.css('top', -gap+'px');
+    e.css('left', '0px');
+    e.css('clip-path', 'inset(0 0 ' + gap + 'px 0)');
+
+  } else {
+    // 스크린 가로폭보다 동영상 가로폭이 좁은 경우
+    // 동영상을 세로높이에 맞춰서 확대후 좌우를 자른다
+    var nextVideoHeight = origElementHeight;
+    var nextVideoWidth = origVideoWidth * origElementHeight / origVideoHeight;
+
+    var e = $('.embed-container');
+    var verticalGap = (nextVideoHeight - origElementHeight) * 0.5;
+    var horizontalGap = (nextVideoWidth - w) * 0.5;
+    e.css('height', nextVideoHeight+'px');
+    e.css('width', nextVideoWidth+'px');
+    e.css('left', -horizontalGap+'px');
+    e.css('top', -verticalGap+'px');
+    e.css('clip-path', 'inset(0 0 0 0');
+  }
 }
 
 window.onresize = function(evt) {

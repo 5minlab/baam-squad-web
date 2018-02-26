@@ -10,6 +10,10 @@
 body {
   font-family: $default-font-family;
   color: #D2D2D2;
+  // 동영상 폭보다 화면 크기가 좁은경우
+  // 동영상을 높이에 맞춰서 확대하면 동영상 가로폭이 스크린보다 커진다
+  // 이때 가로 스크롤이 안생기도록 하는것이 목적
+  overflow-x: hidden;
 
   @include gradient-y(
       $gradient-color-1, 0%,
@@ -105,7 +109,6 @@ p {
 
     position: relative;
     overflow: hidden;
-    max-width: 100%;
 
     // 창 크기에 맞춰서 조정
     // 픽셀로 계산하는게 무난할듯
@@ -114,7 +117,7 @@ p {
     height: 100%;
   }
 
-  @media only screen and (min-width: (1280px * $video-hero-height / 720px) ){
+  @media screen and (min-width: 35.5em) {
     .embed-container {
       display: block;
     }

@@ -243,9 +243,9 @@ p {
   display: inline-block;
   margin: 0 0 0 2em; }
 
-.footer-head {
-  text-align: center;
-  margin: 60px 0; }
+.footer {
+  margin: 60px 0;
+  text-align: center; }
 
 .footer-head li {
   font-size: 1em;
@@ -253,23 +253,19 @@ p {
   color: #fff; }
 
 .footer-ndm {
-  text-align: center;
-  margin: 60px 0;
   font-size: 1em;
   color: #8E8089; }
 
 .footer-ndm img {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 200px;
   width: 100%; }
 
 .footer-ndm p {
   margin: 0; }
 
 .footer-tail {
-  text-align: center;
-  width: 100%;
-  padding-bottom: 30px; }
+  width: 100%; }
 
 .footer-tail small {
   font-size: 90%;

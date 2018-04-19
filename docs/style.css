@@ -79,17 +79,21 @@ p {
   width: auto; }
 
 .video-hero {
-  height: 630px; }
+  min-height: 650px; }
   .video-hero .video-background {
     background-image: url(/img/index/video-thumbnail.jpg);
     background-repeat: no-repeat;
     background-position: top center;
+    background-size: cover;
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    height: 630px;
+    min-height: 650px;
     z-index: -1; }
+  @media screen and (max-width: 24.15em) {
+    .video-hero .video-background {
+      min-height: 700px; } }
   .video-hero .embed-container {
     display: none;
     position: relative;
@@ -106,8 +110,13 @@ p {
     background-color: rgba(0, 0, 0, 0.3); }
   @media screen and (min-width: 48.1em) {
     .video-hero .embed-container {
-      display: block; }
-    .video-hero .bg-video-overlay {
+      display: block;
+      position: absolute;
+      top: 0; }
+    .video-hero .video-background {
+      min-height: 630px; }
+    .video-hero .b
+g-video-overlay {
       display: block; } }
   .video-hero iframe {
     position: absolute;
@@ -118,7 +127,7 @@ p {
 
 @media screen and (min-width: 35.5em) {
   .video-hero {
-    height: 620px; } }
+    height: 640px; } }
 
 .play-trailer-wrapper {
   text-align: center;
@@ -173,9 +182,9 @@ p {
     padding: 5px; } }
 
 .content-store p {
-  max-width: 400px;
+  max-width: 525px;
   min-width: 280px;
-  width: 70%;
+  width: 80%;
   font-size: 1.4em;
   margin: 0 auto;
   text-align: center;
@@ -183,9 +192,17 @@ p {
   padding: 25px 0 0 0;
   border-bottom: 3px solid rgba(255, 255, 255, 0.5); }
 
+@media screen and (max-width: 24.15em) {
+  .content-store p {
+    max-width: 200px;
+    min-width: 100px; } }
+
 .list-store {
   text-align: center;
   padding: 10px; }
+  .list-store .store-icon-group {
+    display: inline-block;
+    padding-bottom: 10px; }
   .list-store .store-icon-wrapper {
     display: inline-block;
     padding-bottom: 0.5em;
@@ -195,8 +212,7 @@ p {
   .list-store .store-icon-wrapper.not-supported img {
     opacity: 0.3; }
   .list-store img {
-    height: 50px;
-    width: auto; }
+    height: 50px; }
   @media screen and (min-width: 35.5em) {
     .list-store img {
       height: 65px; } }
@@ -275,5 +291,3 @@ p {
   margin: 0 auto;
   max-width: 120px;
   width: 30%; }
-
-/*# sourceMappingURL=style.css.map */

@@ -88,19 +88,27 @@ p {
 
 // background video
 .video-hero {
-  height: $video-hero-height;
-
+  min-height: $video-hero-height;
+  
   .video-background {
+
     background-image: url(/img/index/video-thumbnail.jpg);
     background-repeat: no-repeat;
     background-position: top center;
+    background-size: cover;
 
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    height: $video-hero-height;
+    min-height: $video-hero-height;
     z-index: -1;
+  }
+
+  @media screen and (max-width: 24.15em){
+    .video-background{
+      min-height: 700px;
+    }
   }
 
   .embed-container {
@@ -131,12 +139,18 @@ p {
   @media screen and (min-width: 48.1em) {
     .embed-container {
       display: block;
+      position: absolute;
+      top: 0;
     }
-    .bg-video-overlay {
+    .video-background {
+      min-height: 630px;
+    }
+
+    .b
+g-video-overlay {
       display: block;
     }
   }
-
   iframe {
     position: absolute;
     top: 0;
@@ -229,9 +243,9 @@ p {
 // store
 .content-store {
   p {
-    max-width: 400px;
+    max-width: 525px;
     min-width: 280px;
-    width: 70%;
+    width: 80%;
     font-size: 1.4em;
 
     margin: 0 auto;
@@ -240,10 +254,22 @@ p {
     padding: 25px 0 0 0;
     border-bottom: 3px solid rgba(255, 255, 255, 0.5);
   }
+
+  @media screen and (max-width: 24.15em){
+    p{
+      max-width: 200px;
+      min-width: 100px;
+    }
+  }
 }
 .list-store {
   text-align: center;
   padding: 10px;
+
+  .store-icon-group{
+    display: inline-block;
+    padding-bottom: 10px;
+  }
 
   .store-icon-wrapper {
     display: inline-block;
@@ -260,10 +286,10 @@ p {
     }
   }
 
-  img {
+  img{
     height: 50px;
-    width: auto;
   }
+
   @media screen and (min-width: 35.5em) {
     img {
       height: 65px;

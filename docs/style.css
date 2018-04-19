@@ -89,11 +89,11 @@ p {
     top: 0;
     right: 0;
     width: 100%;
-    min-height: 650px;
+    min-height: 630px;
     z-index: -1; }
   @media screen and (max-width: 24.15em) {
     .video-hero .video-background {
-      min-height: 700px; } }
+      min-height: 685px; } }
   .video-hero .embed-container {
     display: none;
     position: relative;
@@ -209,6 +209,10 @@ g-video-overlay {
     border-bottom: 2px solid transparent; }
   .list-store .store-icon-wrapper.supported:hover {
     border-bottom: 2px solid #fdc444; }
+  .list-store .store-icon-wrapper.not-supported a {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none; }
   .list-store .store-icon-wrapper.not-supported img {
     opacity: 0.3; }
   .list-store img {

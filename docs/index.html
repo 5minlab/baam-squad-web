@@ -40,6 +40,8 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  <!-- css force update -->
+  <link rel="stylesheet" href="style.css?4">
 </head>
 
 <body>
@@ -76,7 +78,7 @@
           width="640"
           height="390"
           class="youtube-player-iframe"
-          src="https://www.youtube.com/embed/GIuZ-D41Et8?enablejsapi=1&version=3&playerapiid=ytplayer"
+          src="https://www.youtube.com/embed/rHotyWjquB4?enablejsapi=1&version=3&playerapiid=ytplayer"
           allowscriptaccess="always"
           frameborder="0"
           allowfullscreen></iframe>
@@ -88,17 +90,26 @@
     <div class="content-store">
     <p class="upper-case">get the game</p>
     <div class="list-store">
-      <div class="store-icon-wrapper supported">
-        <a href="//store.steampowered.com/app/736720/BAAM_SQUAD" target="_blank">
-          <img src="/img/store/Logo_SteamVR.png" />
-        </a>
+      <div class="store-icon-group">
+        <div class="store-icon-wrapper supported">
+          <a href="//store.steampowered.com/app/736720/BAAM_SQUAD" target="_blank">
+            <img src="/img/store/Logo_SteamVR.png" />
+          </a>
+        </div>
+        <div class="store-icon-wrapper supported">
+          <a href="//www.viveport.com/apps/cf2f9277-f047-42b6-9fad-14c33ba6182e">
+            <img src="/img/store/Logo_Viveport.png" />
+          </a>
+        </div>
       </div>
-      <div class="store-icon-wrapper not-supported">
-        <img src="/img/store/Logo_Oculus.png" />
-      </div>
-      <div class="store-icon-wrapper not-supported">
-        <img src="/img/store/Logo_WindowsMR.png" />
-      </div>
+      <div class="store-icon-group">
+        <div class="store-icon-wrapper not-supported">
+          <img src="/img/store/Logo_Oculus.png" />
+        </div>
+        <div class="store-icon-wrapper not-supported">
+          <img src="/img/store/Logo_WindowsMR.png" />
+        </div>
+      </div>        
     </div>
     </div>
     <!-- end store link -->
@@ -234,9 +245,10 @@
       <img src="/img/index/zombies02-resize.png" class="show-only-mobile pure-img"></img>
     </div>
   </div>
+  </div>
+  </section>
 
-
-  <footer class="pure-g content footer-head">
+  <footer class="pure-g content footer footer-head">
     <ul class="pure-u-1">
       <li class="">
         Like Our
@@ -256,11 +268,8 @@
       </li>
     </ul>
   </footer>
-  </div>
-  </section>
 
-
-  <footer class="pure-g footer-tail">
+  <footer class="pure-g footer footer-tail">
     <div class="pure-u-1">
       <a href="//5minlab.com" target="_blank">
         <img src="/img/5minlab/5minlab.png" class="pure-img company-logo" />
@@ -269,6 +278,15 @@
         <small>
           © 2018 5minlab Co., Ltd. All rights reserved.
         </small>
+      </p>
+    </div>
+  </footer>
+
+  <footer class="pure-g footer footer-ndm">
+    <div class="pure-u-1">
+      <img src="/img/logo/NCM_Logo_1.png" />
+      <p>
+        This game was created with the support of Nexon Computer Museum.
       </p>
     </div>
   </footer>

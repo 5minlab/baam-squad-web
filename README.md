@@ -3,13 +3,13 @@
 ## develop
 
 ```bash
-yarn
+yarn install   # or pnpm install
 yarn run start-https
 ```
 
 ## build
 
 ```bash
-yarn
+yarn install   # or pnpm install
 yarn run build-css
 ```
